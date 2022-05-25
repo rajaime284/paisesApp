@@ -1,1 +1,26 @@
-<p>por-pais works!</p>
+<h2>Por País</h2>
+<hr>
+
+
+  <div class="row">
+    <div class="col">
+     <app-pais-input
+      (onEnter)="buscar($event)"
+      (onDebounce)="sugerencias( $event )"
+      placeholder="Buscar país..."
+      >
+    </app-pais-input>
+    </div>
+  </div>
+  <hr>
+
+<div *ngIf="hayError" class="alert alert-danger">
+   No se encontro el termino {{termino}}
+</div>
+
+
+<div *ngIf="!hayError" class="row">
+  <div class="col">
+   <app-pais-tabla [paises]="paises" [hayError]="hayError"></app-pais-tabla>
+  </div>
+</div>
