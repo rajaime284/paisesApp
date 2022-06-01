@@ -40,7 +40,9 @@ export class VerPaisComponent implements OnInit {
       this.paisService.getPaisAlpha(id)
       .subscribe(pais =>{
         console.log(pais);
-        this.pais = pais[0];
+        this.pais = pais;
+        console.log(this.pais);
+
         console.log(this.pais.translations['ara'].official);
 
         this.loading = true

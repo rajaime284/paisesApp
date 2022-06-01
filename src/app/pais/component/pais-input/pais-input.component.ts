@@ -24,11 +24,11 @@ export class PaisInputComponent implements OnInit{
 
 
     ngOnInit() {
-      this.debounce.
-      pipe(debounceTime(300)).
-      subscribe(valor => {
+      this.debounce
+      .pipe(debounceTime(300))
+      .subscribe(valor => {
        this.onDebounce.emit(valor);
-       console.log('debouncer:' ,valor)
+       console.log('debouncer:',valor);
       });
     }
 
